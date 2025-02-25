@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>구조 가상클래스 선택자</title>
+
+</head>
+<body>
+	<!-- body 요소의 첫 번째 위치하는 ul 요소 -->
+	<ul>
+		<li>first</li>
+		<li>second</li>
+		<li>third</li>
+		<li>fourth</li>
+		<li>fifth</li>
+		<li>sixth</li>
+		<li>seventh</li>
+	</ul>	
+	<p>body 레벨의 p 태그가<em>처음이면서 마지막으로</em> 등장</p>
+	<div id="div1">		
+		<p>div 1 레벨의 p 태그가<em>첫 번째이면서 처음으로</em> 등장</p>
+		<p>div 1 레벨의 p 태그가<em>두번째</em>등장</p>
+		<p>div 1 레벨의 p 태그가<em>마지막이면서 세번째, 마지막 번째</em> 등장</p>
+		<div>11</div>
+	</div>
+	<div id="div2">
+		<div id="divSub">
+			<p>divSub 레벨의 p 태그가<em>첫 번째 이면서 처음으로 마지막으로, 
+				첫번째, 마지막 번째</em> 등장</p></div>
+		<p>div2 레벨의 p 태그가 <em>처음으로 마지막으로, 마지막번째</em> 등장</p>
+	</div>
+</body>
+</html>
