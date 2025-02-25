@@ -4,7 +4,8 @@
 	<meta charset="UTF-8">
 	<title>CSS의 단위 이해하기</title>
 	<style type="text/css">
-		/* font 관련 속성들은 상속되기 때문에 rem 단위는 최상위 html 요소의 font-size를
+		/* nm, cm, in, pt,		px, %, em, rem, 1vw, 1vh
+		 font 관련 속성들은 상속되기 때문에 rem 단위는 최상위 html 요소의 font-size를
 		 * 기준으로 배수 크기로 표현되며 em과 %는 부모 요소의 font-size를 기준으로 각각
 		 * 배수 크기와 백분율 크기로 표현된다. 아래에서 font-size에 rem 단위를 사용했는데
 		 * html 요소에 font-size가 별도로 지정되어 있지 않기 때문에 html 문서의 기본
@@ -21,7 +22,8 @@
 		.rem075 { font-size: 0.75rem; }
 		.rem150 { font-size: 1.5rem; }
 		.px12 { font-size: 12px; }
-		.px16 { font-size: 16px; }		
+		.px16 { font-size: 16px; }	
+		/* (em, rem 등등)배수 단위로 표현하면 더 뛰어나게 표현가능함. */
 		
 		.black { background-color: black; color: white; }
 		.alpha50 { background-color: rgba(255,0, 0, 0.5); color: black; }
