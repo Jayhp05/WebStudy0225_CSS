@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>폰트와 텍스트관련 속성</title>
+	<!-- 
+		구글에서 운영하는 무료 웹 폰트 사이트 : https://fonts.google.com
+		구글 웹 폰트에서 Noto Sans KR(한, 영 폰트) 폰트와 Poppins(영문 폰트) 폰트를 사용
+	-->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Dongle&family=Nanum+Pen+Script&display=swap" rel="stylesheet">
+	<style>
+		/* .nanum-pen-script-regular {
+			font-family: "Nanum Pen Script", serif;
+			font-weight: 400;
+			font-style: normal;
+		}
+
+		.dongle-regular {
+			font-family: "Dongle", serif;
+			font-weight: 400;
+			font-style: normal;
+		} */
+
+		h1 {
+			font-family: Dongle, 'Noto Sans KR', sans-serif;
+			font-weight: 20px;
+		}
+
+		.font {
+			font: oblique small-caps bold 14px 궁서;
+		}
+
+		.em1 {
+			font-weight: 600;
+			font-style: normal;
+			letter-spacing: 2em;
+		}
+
+		.css {
+			text-indent: 50px;
+			line-height: 200%;
+		}
+
+		.strong {
+			word-spacing: 2em;
+			text-decoration: underline;
+		}
+
+		.price {
+			width: 500px;
+			height: 50px;
+			text-align: center;
+			border: 1px solid royalblue;
+			line-height: 50px;
+		}
+
+		.c_price {
+			text-decoration: line-through;
+		}
+
+		.pre { 
+			white-space: pre; 
+		}
+
+		.direction {
+			width: 500px;
+			margin: 0 auto;
+			font-variant: small-caps;
+			direction: rtl;
+		}
+
+		/* 텍스트에 그림자 효과 지정 - 가로 옵셋 세로 옵셋 그림자 번짐 정도 색상 */
+		.shadow {
+			width: 500px;
+			height: 50px;
+			margin: 0px auto;
+			font-size: 2.5em;
+			font-style: italic;
+			font-weight: bold;
+			text-shadow: 5px 5px 5px wheat;
+		}
+
+		.overflow1 {
+			width: 300px;
+			border: 1px solid darkkhaki;
+			text-overflow: ellipsis;
+			white-space: nowrap;
+			overflow: hidden;
+		}
+	</style>
+</head>
+<body>
+	<h1>폰트와 텍스트 관련 속성(Font & Text CSS Attribute)</h1>
+	<p>font는 글꼴의 다양한 속성을 
+		<span class="font">한 번에 지정할 수 있는</span>
+		<span class="em1">축약형</span> 속성이다.		
+	</p>
+	<p class="css">HTML 문서의 디자인을 담당하는 CSS는
+	<strong class="strong">폰트와 텍스트 속성을 다양하게 제공하고 있다.</strong></p>
+	<p class="price">그 상품의 판매가는 <strong>9,900원</strong>
+		(<span class="c_price">10,000</span>)
+	<div class="pre">텍스트에 공백문자를 
+		처리할 수 있는 방법을 
+		지정한다.</div>
+	<div class="direction">텍스트의 쓰기 방향과 한글은 적용되지 않는 font-variant</div>
+	<div class="shadow">텍스트에 그림자 설정하기</div>
+	<p class="overflow1">font-family는 글꼴의 종류를 지정하는 속성이다. 
+		만약 글꼴에 공백있는 이름이면 따옴표(‘’)로 감싸서 지정해야 한다.</p>
+</body>
+</html>
