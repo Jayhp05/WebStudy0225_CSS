@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            font-family: serif;
+        }
+
+        fieldset {
+            border-color: rgb(255, 255, 255);
+        }
+
+        .member_data {
+            font-weight: bold;
+        }
+
+        .main_div {
+            margin-top: 40px;
+            box-sizing: border-box; 
+        }
+
+        .first_div_top {
+            width: 200px;
+            border: 1px solid rgb(211, 206, 206);
+        }
+
+        .second_div_top {
+            border: 1px solid rgb(211, 206, 206);
+            width: 570px;
+            border-left: none;
+        }
+
+        .first_div {
+            width: 200px;
+            border: 1px solid rgb(211, 206, 206);
+            border-top: none;
+        }
+
+        .second_div {
+            border: 1px solid rgb(211, 206, 206);
+            width: 570px;
+            border-top: none;
+            border-left: none;
+        }
+
+        ul {
+            list-style-type: none;
+        }
+
+        li {
+            font-weight: bold;
+            margin-left: -30px;
+        }
+
+        .enter_data {
+            margin: 15px 0 0 15px;
+        }
+
+        #enter_data_sub {
+            margin: 10px 0 0 15px;
+        }
+
+        #btns {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+    </style>
+    <script>
+        function findId(event) {
+            event.preventDefault();
+
+            var id = document.data.id.value;
+
+            if (id === "") {  
+                alert("아이디를 입력해주세요.");
+            }
+            else {
+                alert("중복 확인 버튼이 클릭되었습니다. 입력된 아이디: " + id);
+            }
+        }
+
+        function findZipcode(zipcode) {
+            data.zipcode.value = zipcode;
+            if (zipcode == '12345') {
+                data.address.value = '서울시 관악구 봉천동 서울대입구역';
+            }
+            else if (zipcode == '11111') {
+                data.address.value = '서울시 강남구 역삼동';
+            }
+        }
+
+        function formsubmit() {
+            if (data.zipcode.value.length <= 0) {
+                alert('우편번호를 입력해주세요.');
+                return false;
+            }
+
+            if (data.address.value.length <= 0) {
+                alert('주소를 입력해주세요.');
+                return false;
+            }
+
+            if (data.member_id.value.length <= 0) {
+                alert('아이디를 입력해주세요.');
+                return false;
+            }
+        }
+    </script>
+</head>
+<body>
+    <form name="data" action="#" method="post" onsubmit="return formsubmit;">
+        <div style="border-bottom: 1px solid black; width: 82px;"><input type="image" src="../images/member_info_title.gif" alt="메인 제목"></div>
+    
+        <div style="margin-top: 0; border-top: 1px solid rgb(216, 216, 216);">
+            <p style="font-size: small;">
+                회원정보는 개인정보취급방침에 따라 안전하게 보호되며 회원님의 동의 없이 공개 또는 제3자에게 제공되지<br>
+                않습니다.
+                <span style="text-decoration: underline; color: blue;">개인정보취급방침</span>
+            </p>
+        </div>
+
+        <h5 style="text-align: right;"><input type="image" src="../images/bullet_checked.gif">표시는 필수입력사항</h5>
+
+        <fieldset>
+            <legend class="member_data">회원 기본정보</legend>
+            <div class="main_div">
+                <div style="display: flex;">
+                    <div class="first_div_top">
+                        <ul>
+                            <li><input type="image" src="../images/bullet_checked.gif">이름</li>
+                        </ul>
+                    </div>
+                    <div class="second_div_top">
+                        <input type="text" name="name" maxlength="5" size="25" class="enter_data">
+                    </div>
+                </div>
+                <div style="display: flex;">
+                    <div class="first_div" style="border-top: none;">
+                        <ul>
+                            <li><input type="image" src="../images/bullet_checked.gif">아이디</li>
+                        </ul>
+                    </div>
+                    <div class="second_div" style="border-top: none;">
+                        <input type="text" name="id" maxlength="10" size="25" class="enter_data">
+                        <input type="image" src="../images/btn_overlap.gif" alt="중복" onclick="findId(event);">
+                    </div>
+                </div>
+                <div style="display: flex;">
+                    <div class="first_div" style="border-top: none;">
+                        <ul>
+                            <li><input type="image" src="../images/bullet_checked.gif">비밀번호</li>
+                        </ul>
+                    </div>
+                    <div class="second_div" style="border-top: none;">
+                        <input type="password" name="passwd" maxlength="20" size="25" class="enter_data">
+                    </div>
+                </div>
+                <div style="display: flex;">
+                    <div class="first_div" style="border-top: none;">
+                        <ul>
+                            <li><input type="image" src="../images/bullet_checked.gif">비밀번호 확인</li>
+                        </ul>
+                    </div>
+                    <div class="second_div" style="border-top: none;">
+                        <input type="password" name="passwd_confirm" maxlength="20" size="25" class="enter_data">
+                    </div>
+                </div>
+                <div style="display: flex;">
+                    <div class="first_div" style="border-top: none;">
+                        <ul>
+                            <li><input type="image" src="../images/bullet_checked.gif">이메일</li>
+                        </ul>
+                    </div>
+                    <div class="second_div" style="border-top: none;">
+                        <input type="text" name="email" maxlength="15" size="15" class="enter_data">@
+                        <input type="text" name="email" maxlength="15" size="15" class="enter_data" style="margin-left: -5px;">
+                        <select name="email" id="email_sub" class="enter_data">
+                            <option value="1" selected>-선택해 주세요-</option>
+                            <option value="2">gmail.com</option>
+                            <option value="3">naver.com</option>
+                            <option value="4">daum.net</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </fieldset>
+        <br>
+        <fieldset>
+            <legend class="member_data">회원 신상정보</legend>
+            <div class="main_div">
+                <div style="display: flex; height: 70px;">
+                    <div class="first_div_top">
+                        <ul>
+                            <li><input type="image" src="../images/bullet_checked.gif">주소</li>
+                        </ul>
+                    </div>
+                    <div class="second_div_top">
+                        <div id="enter_data_sub">
+                            <input type="text" name="zipcode" maxlength="5" size="5">-
+                            <input type="text" name="zipcode" maxlength="5" size="5" style="margin-bottom: 5px;">
+                            <input type="button" value="우편번호 찾기" onclick="findZipcode('12345');">
+                            <input type="text" name="address" size="60" readonly>
+                        </div>
+                    </div>
+                </div>
+                <div style="display: flex;">
+                    <div class="first_div" style="border-top: none;">
+                        <ul>
+                            <li><input type="image" src="../images/bullet_checked.gif">휴대폰</li>
+                        </ul>
+                    </div>
+                    <div class="second_div" style="border-top: none;">
+                        <div class="enter_data">
+                            <select name="number">
+                                <option value="first_num" selected>010</option>
+                                <option value="first_num2">011</option>
+                                <option value="first_num3">012</option>
+                                <option value="first_num4">013</option>
+                                <option value="first_num5">019</option>
+                            </select>
+                            <input type="second_num" name="num" maxlength="4" size="5">
+                            <input type="second_num" name="num" maxlength="4" size="5">
+                        </div>                    
+                    </div>
+                </div>
+                <div style="display: flex;">
+                    <div class="first_div" style="border-top: none;">
+                        <ul>
+                            <li><input type="image" src="../images/bullet_checked.gif">직업</li>
+                        </ul>
+                    </div>
+                    <div class="second_div" style="border-top: none;">
+                        <div class="enter_data">
+                            <select name="job" id="job">
+                                <option value="bsse" selected>직업을 선택해 주세요</option>
+                                <option value="job">프론트엔트 개발자</option>
+                                <option value="job2">백엔드 개발자</option>
+                            </select>
+                        </div>                    
+                    </div>
+                </div>
+                <div style="display: flex;">
+                    <div class="first_div" style="border-top: none;">
+                        <ul>
+                            <li>취미</li>
+                        </ul>
+                    </div>
+                    <div class="second_div" style="border-top: none;">
+                        <div class="enter_data">
+                            <label><input type="checkbox" name="hobby">영화감상</label>
+                            <label><input type="checkbox" name="hobby">독서</label>
+                            <label><input type="checkbox" name="hobby">골프</label>
+                            <label><input type="checkbox" name="hobby">낚시</label>
+                            <label><input type="checkbox" name="hobby">여행</label>
+                            <label><input type="checkbox" name="hobby">기타</label>
+                        </div>                    
+                    </div>
+                </div>
+                <div style="display: flex;">
+                    <div class="first_div" style="border-top: none;">
+                        <ul>
+                            <li>가입경로</li>
+                        </ul>
+                    </div>
+                    <div class="second_div" style="border-top: none;">
+                        <div class="enter_data">
+                            <label><input type="radio" name="root">TV</label>
+                            <label><input type="radio" name="root">신문/잡지</label>
+                            <label><input type="radio" name="root">인터넷</label>
+                            <label><input type="radio" name="root">지인소개</label>
+                            <label><input type="radio" name="root">기타</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </fieldset>
+        <div id="btns">
+            <input type="image" src="../images/btn_confirm.gif" alt="확인">&nbsp;&nbsp;
+            <input type="image" src="../images/btn_cancel.gif" alt="취소">
+        </div>
+    </form>
+</body>
+</html>
