@@ -6,14 +6,20 @@
     <title>Document</title>
     <style>
         body {
-            width: 800px;
+            width: 820px;
+            height: 900px;
             margin-left: auto;
             margin-right: auto;
             font-family: serif;
+            box-shadow: 5px 5px 5px rgb(150, 150, 150);
+        }
+
+        form {
+            width: 800px;
         }
 
         fieldset {
-            border-color: rgb(255, 255, 255);
+            border-color: rgb(255, 249, 249);
         }
 
         .member_data {
@@ -63,7 +69,7 @@
         }
 
         #enter_data_sub {
-            margin: 10px 0 0 15px;
+            margin: 7px 0 0 15px;
         }
 
         #btns {
@@ -115,10 +121,11 @@
     </script>
 </head>
 <body>
-    <form name="data" action="#" method="post" onsubmit="return formsubmit;">
-        <div style="border-bottom: 1px solid black; width: 82px;"><input type="image" src="../images/member_info_title.gif" alt="메인 제목"></div>
+    <!-- method를 get방식으로 받아 입력된 정보 출력 -->
+    <form name="data" action="#" method="get" onsubmit="return formsubmit;">
+        <div style="border-bottom: 2px solid black; width: 82px;"><input type="image" src="../images/member_info_title.gif" alt="메인 제목"></div>
     
-        <div style="margin-top: 0; border-top: 1px solid rgb(216, 216, 216);">
+        <div style="border-top: 1px solid rgb(216, 216, 216);">
             <p style="font-size: small;">
                 회원정보는 개인정보취급방침에 따라 안전하게 보호되며 회원님의 동의 없이 공개 또는 제3자에게 제공되지<br>
                 않습니다.
@@ -126,7 +133,7 @@
             </p>
         </div>
 
-        <h5 style="text-align: right;"><input type="image" src="../images/bullet_checked.gif">표시는 필수입력사항</h5>
+        <p style="text-align: right; font-size: small;"><input type="image" src="../images/bullet_checked.gif">표시는 필수입력사항</p>
 
         <fieldset>
             <legend class="member_data">회원 기본정보</legend>
