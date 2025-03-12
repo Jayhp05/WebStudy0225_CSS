@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>플렉스 박스 레이아웃</title>
+  <style>
+    h2 {
+      width: 800px;      
+      margin: 30px 30px 0;
+    }    
+    .container {      
+      border: 1px solid black;
+      margin: 0px 30px;      
+      display: flex;
+    }
+    .items {
+        text-align: center;
+        margin: 5px;
+	    width: 200px;
+        padding: 10px 50px;
+      
+    }   
+    .items:nth-child(odd) {
+      background-color: #FA2D6F;
+    }           
+    .items:nth-child(even) {
+      background-color: #2D62FA;  
+    }
+
+    .container-1 {
+        /* 기본값 */
+        flex-direction: nowrap;
+    }
+
+    .container-2 {
+        flex-wrap: wrap;
+    }
+     
+    .container-3 {
+        flex-wrap: wrap-reverse;
+    }
+
+    .container-4 {
+        /* 기본 값 */
+        flex-flow: row nowrap;
+    }
+
+    .container-5 {
+        flex-flow: row wrap;
+    }
+
+  </style>  
+</head>
+<body>
+  <h2>flex-wrap: nowrap(기본값)</h2>    
+  <div class="container container-1">
+    <div class="items">item1</div>
+    <div class="items">item2</div>
+    <div class="items">item3</div>
+    <div class="items">item4</div>
+    <div class="items">item5</div>
+    <div class="items">item6</div>
+  </div>
+  <h2>flex-wrap: wrap</h2>  
+  <div class="container container-2">
+    <div class="items">item1</div>
+    <div class="items">item2</div>
+    <div class="items">item3</div>
+    <div class="items">item4</div>
+    <div class="items">item5</div>
+    <div class="items">item6</div>    
+  </div>
+  <h2>flex-wrap: wrap-reverse</h2>  
+  <div class="container container-3">
+    <div class="items">item1</div>
+    <div class="items">item2</div>
+    <div class="items">item3</div>
+    <div class="items">item4</div>
+    <div class="items">item5</div>
+    <div class="items">item6</div>    
+  </div>
+  <h2>flex-flow: row nowrap(기본값)</h2>   
+  <div class="container container-4">
+    <div class="items">item1</div>
+    <div class="items">item2</div>
+    <div class="items">item3</div>
+    <div class="items">item4</div>
+    <div class="items">item5</div>
+    <div class="items">item6</div>    
+  </div>
+  <h2>flex-flow: row wrap</h2>   
+  <div class="container container-5">
+    <div class="items">item1</div>
+    <div class="items">item2</div>
+    <div class="items">item3</div>
+    <div class="items">item4</div>
+    <div class="items">item5</div>
+    <div class="items">item6</div>    
+  </div>    
+</body>
+</html>
