@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>플렉스 박스 레이아웃</title>
+  <style>
+    .main-container {
+      display: flex;
+      justify-content: center;
+      border: 1px solid red;
+    }
+    .main-items {
+      border: 1px solid blue;
+    }    
+    h2 {     
+      margin: 30px 30px 0;
+    }   
+    .container {      
+      border: 1px solid black;      
+      height: 200px;
+      margin: 0px 30px;      
+      display: flex;
+    }
+    .items {
+      text-align: center;
+      margin: 5px;	  	
+      width: 100px;      
+    }   
+    .items:nth-child(odd) {
+      background-color: #FA2D6F;
+    }           
+    .items:nth-child(even) {
+      background-color: #2D62FA;  
+    }
+    .container-1 {
+      flex-wrap: wrap;
+      /* align-content: stretch;  */ /* 기본값 */
+    }
+    .container-2 {
+      flex-wrap: wrap;      
+      align-content: flex-start;
+      /* flex-wrap: wrap 속성이 설정 되면 align-content가 적용되고 
+       * flex-wrap: nowrap(기본값)이 설정 되면 align-items이 적용된다.
+       **/
+      align-items: stretch;
+    }
+    .container-3 {
+      flex-wrap: wrap;
+      align-content: center;
+    }
+    .container-4 {
+      flex-wrap: wrap;
+      /* 여러 줄이 아닌 경우 flex-start와 같음 */
+      align-content: space-between;
+    }
+    .container-5 {
+      flex-wrap: wrap;
+      /* 여러 줄이 아닌 경우 center와 같음 */
+      align-content: space-around;
+    }
+    .container-6 {
+      flex-wrap: wrap;
+      /* 여러 줄이 아닌 경우 center와 같음 */
+      align-content: space-evenly;
+    }               
+  </style>  
+</head>
+<body>
+  <div class="main-container">
+    <div class="main-items">
+      <h2>align-content: stretch(기본값)</h2>    
+      <div class="container container-1">
+        <div class="items">item1</div>
+        <div class="items">item2</div>
+        <div class="items">item3</div>
+        <div class="items">item4</div>
+        <div class="items">item5</div>
+        <div class="items">item6</div>
+      </div>
+      <h2>align-content: flext-start</h2>   
+      <div class="container container-2">
+        <div class="items">item1</div>
+        <div class="items">item2</div>
+        <div class="items">item3</div>
+        <div class="items">item4</div>
+        <div class="items">item5</div>
+        <div class="items">item6</div>    
+      </div>
+      <h2>align-content: center</h2>     
+      <div class="container container-3">
+        <div class="items">item1</div>
+        <div class="items">item2</div>
+        <div class="items">item3</div>
+        <div class="items">item4</div>
+        <div class="items">item5</div>
+        <div class="items">item6</div>    
+      </div>
+    </div>
+    <div class="main-items">
+      <h2>align-content: flext-between</h2>   
+      <div class="container container-4">
+        <div class="items">item1</div>
+        <div class="items">item2</div>
+        <div class="items">item3</div>
+        <div class="items">item4</div>
+        <div class="items">item5</div>
+        <div class="items">item6</div>    
+      </div>
+      <h2>align-content: flext-around</h2>    
+      <div class="container container-5">
+        <div class="items">item1</div>
+        <div class="items">item2</div>
+        <div class="items">item3</div>
+        <div class="items">item4</div>
+        <div class="items">item5</div>
+        <div class="items">item6</div>    
+      </div> 
+      <h2>align-content: flext-evenly</h2>   
+      <div class="container container-6">
+        <div class="items">item1</div>
+        <div class="items">item2</div>
+        <div class="items">item3</div>
+        <div class="items">item4</div>
+        <div class="items">item5</div>
+        <div class="items">item6</div>    
+      </div>       
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>플렉스 박스 레이아웃</title>
+  <style>
+    h2 {
+      width: 800px;      
+      margin: 30px 30px 0;
+    }
+    .container {
+      width:800px; 
+      margin: 0px 30px;    
+      border:1px solid black;      
+      display: flex;
+      height: 100px;      
+    }
+    .container-1 {
+      flex-direction: row; /* 기본값*/
+    }
+    .container-2 {
+      flex-direction: row-reverse;
+    }
+    .container-3 {
+      flex-direction: column;
+    }
+    .container-4 {
+      flex-direction: column-reverse;
+    }    
+    .items {
+      text-align: center;
+      /* margin:5px;  */
+	  	/* width:100px; */             
+    }   
+    .items:nth-child(odd) {
+      background-color: #FA2D6F;
+    }           
+    .items:nth-child(even) {
+      background-color: #2D62FA;
+    }
+    .radioCheck-1 {
+      border: none;
+      height: 20px;
+      margin-bottom:30px;            
+    }
+    .radioCheck-2 {
+      border: none;
+      height: 20px;
+      margin-bottom:30px;            
+    }
+    .radioCheck-3 {
+      border: none;
+      height: 20px;
+      margin-bottom:30px;            
+    }
+    .container {      
+      transition: flex-direction 1s ease-in, background-color 1s ease-in;
+      flex-direction: row;
+    }
+    .container.row {
+      flex-direction: row;      
+    }
+    .container.row-reverse {
+      flex-direction: row-reverse;
+    }
+    .container.column {
+      flex-direction: column;      
+    }
+    .container.column-reverse {
+      flex-direction: column-reverse;
+    }
+    .radio-items {
+      /* width: 130px; */
+    }
+  
+  </style>  
+</head>
+<body>
+  <div class="flex-direction-box flex-direction-box-1">
+    <h2>flex-direction</h2>
+    <div class="container container-1">
+      <div class="items">item1</div>
+      <div class="items">item2</div>
+      <div class="items">item3</div>
+    </div>
+    <div class="container radioCheck-1">
+      <div class="radio-items">flex-direction : </div>
+      <div class="radio-items"><label><input type="radio" name="direction" value="row" checked> row</label></div>
+      <div class="radio-items"><label><input type="radio" name="direction" value="row-reverse"> row-reverse</label></div>
+      <div class="radio-items"><label><input type="radio" name="direction" value="column"> column</label></div>
+      <div class="radio-items"><label><input type="radio" name="direction" value="column-reverse"> column-reverse</label></div>
+    </div>
+  </div>
+  <div class="flex-direction-box flex-direction-box-2">
+    <h2>flex-direction</h2>
+    <div class="container container-2">
+      <div class="items">item1</div>
+      <div class="items">item2</div>
+      <div class="items">item3</div>
+    </div>
+    <div class="container radioCheck-2">
+      <div class="radio-items">flex-direction : </div>
+      <div class="radio-items"><label><input type="radio" name="direction" value="row" checked> row</label></div>
+      <div class="radio-items"><label><input type="radio" name="direction" value="row-reverse"> row-reverse</label></div>
+      <div class="radio-items"><label><input type="radio" name="direction" value="column"> column</label></div>
+      <div class="radio-items"><label><input type="radio" name="direction" value="column-reverse"> column-reverse</label></div>
+    </div>    
+  </div>
+  <div class="flex-direction-box flex-direction-box-3">
+    <h2>flex-direction</h2>  
+    <div class="container container-3">
+      <div class="items">item1</div>
+      <div class="items">item2</div>
+      <div class="items">item3</div>
+    </div>
+    <div class="container radioCheck-3">
+      <div class="radio-items">flex-direction : </div>
+      <div class="radio-items"><label><input type="radio" name="direction" value="row" checked> row</label></div>
+      <div class="radio-items"><label><input type="radio" name="direction" value="row-reverse"> row-reverse</label></div>
+      <div class="radio-items"><label><input type="radio" name="direction" value="column"> column</label></div>
+      <div class="radio-items"><label><input type="radio" name="direction" value="column-reverse"> column-reverse</label></div>
+    </div>    
+  </div>  
+  <div class="container container-4">
+    <div class="items">item1</div>
+    <div class="items">item2</div>
+    <div class="items">item3</div>
+  </div>
+  <div class="container radio-container">
+    <div class="items">item1</div>
+    <div class="items">item2</div>
+    <div class="items">item3</div>
+  </div>
+<script>
+  let radios = document.querySelectorAll(".radioCheck-1 input[type='radio']");  
+  radios.forEach((radio, i) => {
+    radio.addEventListener("change", (e) => {
+      let val = e.target.value;
+      let radioContainer = document.querySelector(".container-1");
+      radioContainer.classList.remove("row", "row-reverse", "column", "column-reverse");
+      radioContainer.classList.add(val);
+    });
+  });
+</script>  
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>플렉스 박스 레이아웃</title>
+  <style>
+    h2 {
+      width: 800px;      
+      margin: 30px 30px 0;
+    }    
+    .container {
+      width: 800px;     
+      border: 1px solid black;
+      margin: 0px 30px;
+      height: 100px;
+      display: flex;
+    }  
+    .items {
+      text-align: center;
+      /* margin:5px;  */
+	  	/* width:200px; */
+    }   
+    .items:nth-child(odd) {
+      background-color: #FA2D6F;
+    }           
+    .items:nth-child(even) {
+      background-color: #2D62FA;  
+    }
+  </style>  
+</head>
+<body>
+  <div class="container container-1">
+    <div class="items">item1</div>
+    <div class="items">item2</div>
+    <div class="items">item3</div>
+    <div class="items">item4</div>
+    <div class="items">item5</div>
+    <div class="items">item6</div>
+  </div>
+  <div class="container container-2">
+    <div class="items">item1</div>
+    <div class="items">item2</div>
+    <div class="items">item3</div>
+    <div class="items">item4</div>
+    <div class="items">item5</div>
+    <div class="items">item6</div>    
+  </div>
+  <div class="container container-3">
+    <div class="items">item1</div>
+    <div class="items">item2</div>
+    <div class="items">item3</div>
+    <div class="items">item4</div>
+    <div class="items">item5</div>
+    <div class="items">item6</div>    
+   </div>
+  <div class="container container-4">
+    <div class="items">item1</div>
+    <div class="items">item2</div>
+    <div class="items">item3</div>
+    <div class="items">item4</div>
+    <div class="items">item5</div>
+    <div class="items">item6</div>    
+  </div>  
+</body>
+</html>

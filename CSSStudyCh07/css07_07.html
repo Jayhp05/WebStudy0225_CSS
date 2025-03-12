@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>플렉스 박스 레이아웃</title>
+  <style>
+    h2 {
+      width: 800px;      
+      margin: 30px 30px 0;
+    }
+    .container {     
+      border: 1px solid black;
+      margin: 0px 30px;
+      height: 100px;
+      display: flex;                
+    }
+    .items {
+      text-align: center;
+      padding: 5px 5px;
+      margin: 5px;
+    }   
+    .items:nth-child(odd) {
+      background-color: #FA2D6F;
+    }           
+    .items:nth-child(even) {
+      background-color: #2D62FA;
+    } 
+    .container-1 > .items {
+      flex-basis: 300px;
+      /* 플렉스 항목의 확장과 축소 비율을 기본값으로 설정 */
+      flex-grow: 0;
+      flex-shrink: 1;
+    }
+    .container-1 > .items:nth-child(2) {
+      /* 플렉스 항목의 기본 너비는 위에서 설정한 flex-basis: 300px에 의해서
+       * 300px이 된다. 이때 아래와 같이 두 번째 플렉스 항목만 확장 비율을 1로
+       * 설정하면 플렉스 컨테이너의 너비가 플렉스 항목 3개의 기본 너비를 합친것
+       * 보다 더 커지면 첫 번째와 세 번째 항목의 너비는 300px를 유지하지만
+       * 브라우저의 너비가 커질수록 플렉스 컨테이너에 남는 여백은 모두 두 번째
+       * 항목의 너비에 포함된다. 그리고 플렉스 컨테이너의 너비가 플렉스 항목
+       * 3개의 기본 너비를 합친것 보다 작아지기 시작하면 위에서 설정한 플렉스
+       * 항목의 축소 비율인 flex-shrink: 1에 의해서 플렉스 항목 3개 모두 동일한
+       * 비율로 축소되므로 플렉스 항목의 너비는 모두 같아진다.
+       **/
+      flex-grow: 1;
+    }
+    .container-2 > .items {
+      flex-basis: 300px;
+      flex-grow: 1;
+      flex-shrink: 1;
+    }
+    .container-2 > .items:nth-child(2) {
+      /* 플렉스 항목의 기본 너비는 위에서 설정한 flex-basis: 300px에 의해서
+       * 300px이 된다. 이때 아래와 같이 두 번째 플렉스 항목만 확장과 축소 비율을
+       * 0으로 설정하면 플렉스 컨테이너의 너비가 플렉스 항목 3개의 기본 너비를
+       * 합친것 보다 더 커지면 두 번째 항목의 너비는 300px를 유지하지만 브라우저의
+       * 너비가 커질수록 플렉스 컨테이너에 남는 여백은 모두 첫 번째와 세 번째
+       * 항목이 동일하게 나눠가지며 너비가 확장된다. 그리고 플렉스 컨테이너의
+       * 너비가 플렉스 항목 3개의 기본 너비를 합친것 보다 작아지면 두 번째 항목은
+       * 아래에서 설정한 flex-shrink: 0에 의해서 기본 너비인 300px를 유지하지만
+       * 첫 번째와 세 번째 항목은 위에서 설정한 flex-shrink: 1에 의해서 브라우저의
+       * 너비가 작아지는 만큼 계속해서 축소된다.
+       **/      
+      flex-grow: 0;
+      flex-shrink: 0;
+    }
+    .container-3 > .items:nth-child(1) {
+      /* 플렉스 항목의 기본 너비는 기본값인 flex-basis: auto가 되며 컨테이너3 안의
+       * 3개의 항목에 별도로 width 값을 지정하지 않았기 때문에 이들 플렉스 항목의
+       * 너비는 컨텐츠의 내용 만큼만 차지한다. 이 때 아래와 같이 첫 번째 플렉스
+       * 항목의 확장 비율을 2로 설정하고 나머지 플렉스 항목에는 1을 설정하게 되면
+       * 플렉스 컨테이너의 너비가 3개의 기본 너비를 합친것 보다 작아지게 되면
+       * 기본 축소 비율인 flex-shrink: 1에 의해서 3개의 플렉스 항목 모두 동일한
+       * 비율로 줄어들고 컨텐츠의 내용이 같기 때문에 모두 같은 크기가 된다. 하지만
+       * 플렉스 컨테이너의 너비가 3개의 기본 너비를 합친것 보다 커지면 확장 비율에
+       * 의해서 플렉스 컨테이너의 여유 공간을 2 : 1 : 1 비율로 나눠서 플렉스 항목의
+       * 너비가 커지게 된다. 
+       **/
+      flex-grow: 2;
+    }
+    .container-3 > .items:nth-child(2) {
+      flex-grow: 1;      
+    }
+    .container-3 > .items:nth-child(3) {
+      flex-grow: 1;
+    }
+    .container-4 > .items {
+      flex-basis: 300px;
+    }
+    .container-4 > .items:nth-child(1) {
+      /* 플렉스 항목의 기본 너비는 위에서 설정한 flex-basis: 300px에 의해서
+       * 300px이 된다. 이 때 플렉스 컨테이너의 너비가 플렉스 항목 3개의 기본
+       * 너비를 합친것 보다 더 커져도 확장 비율의 기본값인 flex-grow: 0이
+       * 적용되어 플렉스 항목 3개 모두는 300px를 유지한다. 하지만 플렉스
+       * 컨테이너의 너비가 플렉스 항목 3개의 기본 너비를 합친것 보다 작아지면
+       * 첫 번째 플렉스 항목은 아래에서 지정한 flex-shrink: 2가 적용되고
+       * 두 번째와 세 번째 플렉스 항목은 기본 축소비율인 flex-shrink: 1가
+       * 적용되기 때문에 2 : 1 : 1 비율로 플렉스 항목의 너비가 줄어든다.
+       **/
+      flex-shrink: 2;
+    }    
+  </style>  
+</head>
+<body>
+  <h2>flex-basis: 300px, flex-grow: 0, flex-shrink: 1에<br>
+    두 번째 항목만 flex-grow: 1</h2>  
+  <div class="container container-1">
+    <div class="items">item1</div>
+    <div class="items">item2</div>
+    <div class="items">item3</div>
+  </div>
+  <h2>flex-basis: 300px, flex-grow: 1, flex-shrink: 1<br>
+    두 번째 항목만 flex-grow: 0, flex-shrink: 0</h2>
+  <div class="container container-2">
+    <div class="items">item1</div>
+    <div class="items">item2</div>
+    <div class="items">item3</div>
+  </div>
+  <h2>flex-basis: auto, flex-grow: 0, flex-shrink: 1 (기본값)에<br>
+    각 항목에 flex-grow: 값을 2 : 1 : 1 비율로 지정 </h2>
+  <div class="container container-3">
+    <div class="items">여기는 item1 영역</div>
+    <div class="items">여기는 item2 영역</div>
+    <div class="items">여기는 item3 영역</div>
+  </div>
+  <h2>flex-basis: 300px, flex-grow: 0, flex-shrink: 1에<br>
+    첫 번째 항목에 flex-shrink: 2 값을 지정 </h2>
+  <div class="container container-4">
+    <div class="items">item1</div>
+    <div class="items">item2</div>
+    <div class="items">item3</div>
+  </div>  
+</body>
+</html>
