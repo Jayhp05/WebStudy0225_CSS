@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CSS Grid Layout</title>
+<style>
+    h3 {        
+    margin: 30px 30px 5px;
+    }      
+    .container {
+    margin: 0px 30px;
+    /* width: 600px; */
+    border: 1px solid blue;
+    }      
+    .items{        
+    padding:10px;     
+    font-size: 16px;
+    text-align: center;        
+    border: 1px solid black;
+    }
+    .items p { font-size: 12px; }
+    .items:nth-child(odd) {
+    background-color: #FA2D6F;        
+    }           
+    .items:nth-child(even) {
+    background-color: #0389ff;
+    }
+
+    .container-1 {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(100px, 1fr));
+        grid-template-rows: minmax(100px, auto);
+        grid-auto-rows: minmax(70px, auto);
+    }
+
+    .container-2 {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(100px, 1fr));
+        grid-template-rows: auto;
+    }
+
+    .container-3 {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        /* grid-template-rows: auto; */
+    }
+
+    .container-4 {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        /* grid-template-rows: auto; */
+    }
+
+</style>
+</head>
+<body>
+<h3>grid-template-columns: repeat(2, minmax(100px, 1fr));<br> 
+    grid-template-rows: minmax(100px, auto); grid-auto-rows: minmax(70px, auto);</h3>
+<div class="container container-1">
+    <div class="items">item1</div>
+    <div class="items">item2</div>
+    <div class="items">
+        item3<br>
+        앤아 꺼호여라는 벰자니난<br>
+        앙으오가 팡일신과가 당틴은가 진기씹거<br>
+        둔둬세나다 시랄아는 즈긱츄규를 수샤뭐금가의
+    </div>
+    <div class="items">item4</div>
+    <div class="items">item5</div> 
+    <div class="items">item6</div>  
+</div> 
+<h3>grid-template-columns: repeat(2, minmax(100px, 1fr)); 나머지는 기본값</h3>
+<div class="container container-2">
+    <div class="items">item1</div>
+    <div class="items">item2</div>
+    <div class="items">
+        item3<br>
+        앤아 꺼호여라는 벰자니난<br>
+        앙으오가 팡일신과가 당틴은가 진기씹거<br>
+        둔둬세나다 시랄아는 즈긱츄규를 수샤뭐금가의
+    </div>
+    <div class="items">item4</div>
+    <div class="items">item5</div> 
+    <div class="items">item6</div>  
+</div>        
+<h3>grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));</h3>
+<div class="container container-3">
+    <div class="items">item1</div>
+    <div class="items">item2</div>
+    <div class="items">item3</div>   
+</div>
+<h3>grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));</h3>
+<div class="container container-4">
+    <div class="items">item1</div>
+    <div class="items">item2</div>
+    <div class="items">item3</div>
+</div>      
+</body>
+</html>
