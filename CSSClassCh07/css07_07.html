@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>플렉스 박스 레이아웃</title>
+    <style>
+        h2 {
+        width: 800px;      
+        margin: 30px 30px 0;
+        }
+        .container {     
+        border: 1px solid black;
+        margin: 0px 30px;
+        height: 100px;
+        display: flex;                
+        }
+        .items {
+        text-align: center;
+        padding: 5px 5px;
+        margin: 5px;
+        }   
+        .items:nth-child(odd) {
+        background-color: #FA2D6F;
+        }           
+        .items:nth-child(even) {
+        background-color: #2D62FA;
+        }
+
+        .container-1 > .items {
+            flex-basis: 300px;
+            flex-grow: 0;
+            flex-shrink: 1;
+        }
+
+        .container-1 > .items:nth-child(2) {
+            flex-grow: 1; /* 300px를 넘었을 때 남는 구간은 item의 두번 째가 다 가져감 */
+        }
+
+        .container-2 > .items {
+            flex-basis: 300px;
+            flex-grow: 1;
+            flex-shrink: 1;
+        }
+
+        .container-2 > .items:nth-child(2) {
+            flex-grow: 0;
+            flex-shrink: 0;
+        }
+
+        .container-3 > .items {
+            width: 300px;
+        }
+
+        .container-3 > .items:nth-child(1) {
+            flex-grow: 2;
+        }
+
+        .container-3 > .items:nth-child(2) {
+            flex-grow: 1;
+        }
+
+        .container-3 > .items:nth-child(3) {
+            flex-grow: 1;
+        }
+
+        .container-4 {
+            margin-bottom: 100px;
+        }
+
+        .container-4 > .items {
+            width: 300px;
+        }
+
+        .container-4 > .items:nth-child(1) {
+            flex-shrink: 2;
+        }
+
+    </style>  
+    </head>
+    <body>
+    <h2>flex-basis: 300px, flex-grow: 0, flex-shrink: 1에<br>
+        두 번째 항목만 flex-grow: 1</h2> 
+    <div class="container container-1">
+        <div class="items">item1</div>
+        <div class="items">item2</div>
+        <div class="items">item3</div>
+    </div>
+    <h2>flex-basis: 300px, flex-grow: 1, flex-shrink: 1<br>
+        두 번째 항목만 flex-grow: 0, flex-shrink: 0</h2>
+    <div class="container container-2">
+        <div class="items">item1</div>
+        <div class="items">item2</div>
+        <div class="items">item3</div>
+    </div>
+    <h2>flex-basis: auto, flex-grow: 0, flex-shrink: 1 (기본값)에<br>
+        각 항목에 flex-grow: 값을 2 : 1 : 1 비율로 지정 </h2>
+    <div class="container container-3">
+        <div class="items">item1</div>
+        <div class="items">item2</div>
+        <div class="items">item3</div>
+    </div>
+    <h2>flex-basis: 300px, flex-grow: 0, flex-shrink: 1에<br>
+        첫 번째 항목에 flex-shrink: 2 값을 지정 </h2>
+    <div class="container container-4">
+        <div class="items">item1</div>
+        <div class="items">item2</div>
+        <div class="items">item3</div>
+    </div>  
+</body>
+</html>
