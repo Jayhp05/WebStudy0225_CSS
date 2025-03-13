@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CSS Grid Layout</title>
+    <style>
+    /* 그리드 컨테이너 정의 및 행과 열의 크기와 개수 지정 */
+    .container {
+        display:grid;
+        margin: 30px 30px;
+        width: 600px;
+        grid-template-columns: 200px 200px 200px;
+        grid-template-rows: 200px 200px;
+        border: 5px solid blue;
+    }
+    .items{
+        /* border: 2px solid black; */
+        padding:10px;     
+        font-size: 20px;
+        text-align: center;
+        margin: 40px;
+    }
+    
+    .items:nth-child(odd) {
+        background-color: #FA2D6F;
+    }           
+    .items:nth-child(even) {
+        background-color: #2D62FA;
+    }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+    <div class="items"></div>
+    <div class="items"></div>
+    <div class="items"></div>
+    <div class="items"></div>
+    <div class="items"></div>
+    <div class="items"></div>
+    </div>
+</body>
+</html>

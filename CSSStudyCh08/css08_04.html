@@ -1,0 +1,81 @@
+  <!DOCTYPE html>
+  <html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CSS Grid Layout</title>
+    <style>
+      h2 {        
+        margin: 30px 30px 5px;
+      }      
+      .container {
+        margin: 0px 30px;
+        width: 800px;
+        gap: 0.5rem;
+        display: grid;
+
+        /* 그리드 영역으로 항목을 배치할 때는 grid-template-areas 속성을 사용해
+         * 그리드 행과 열의 구조를 정의하면 되는데 이때 그리드 항목에 정의한
+         * 그리드 영역의 이름이 사용된다. 이 영역의 이름으로 해당 그리드 항목이
+         * 차지할 행과 열의 범위를 다음과 같이 직관적으로 설정할 수 있다. 이때
+         * 한 행에 들어갈 그리드 영역의 이름을 큰따옴표("") 안에 공백으로 구분해서
+         * 설정하면 된다. 빈 셀이 필요하다면 마침표(.) 또는 none을 지정하면 된다.
+         **/
+         grid-template-areas: 
+            "item1 item1 item1"
+            "item2 item3 item4"            
+            "item5 item5 item4"
+            "  .     .    none"
+            "item6 item6 item6";
+
+        /* 행의 높이와 열의 너비를 설정하려면 grid-template-rows, 
+         * grid-template-columns 속성을 사용해 크기를 설정하면 된다. 
+         **/
+        grid-template-rows: repeat(3, minmax(100px, auto));
+        grid-template-columns: repeat(3, minmax(200px, 1fr));
+      }      
+      .items{        
+        padding:10px;
+        text-align: center;        
+        color: white;
+      }
+      .item1 {
+        background-color: #037EF3;
+
+        /* 그리드 항목에 그리드 영역의 이름을 정의 한다. */
+        grid-area: item1;
+      }
+      .item2 {
+        background-color: #F85A40;
+        grid-area: item2;
+      }
+      .item3 {
+        background-color: #00C16E;
+        grid-area: item3;
+      }
+      .item4 {
+        background-color: #7552CC;
+        grid-area: item4;
+      }      
+      .item5 {
+        background-color: #0CB9C1;
+        grid-area: item5;
+      }
+      .item6 {
+        background-color: #F48924;
+        grid-area: item6;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>그리드 영역으로 그리드 항목 배치하기 </h2>
+    <div class="container container-1">
+      <div class="items item1">item1</div>
+      <div class="items item2">item2</div>
+      <div class="items item3">item3</div>
+      <div class="items item4">item4</div>
+      <div class="items item5">item5</div>
+      <div class="items item6">item6</div>
+    </div>   
+  </body>
+  </html>
